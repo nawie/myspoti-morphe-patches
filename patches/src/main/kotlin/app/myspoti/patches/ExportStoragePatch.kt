@@ -7,6 +7,7 @@ import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.patch.BytecodePatchContext
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.patch.resourcePatch
+import app.template.patches.shared.Constants.MYSPOTI_REVERA
 import app.template.patches.shared.Constants.MYSPOTI_STABLE
 
 private const val EXT = "Lapp/myspoti/extension/DownloadPatch;"
@@ -227,7 +228,7 @@ val myspotiExportStorageStable = bytecodePatch(
     description = "Adds Export & storage to Settings > Downloads in MySpoti 2.4.0 in both Classic and Immersive looks, matching MySpoti's Immersive glass, grouped surfaces and selected accent; includes tagged audio exports, offline lyrics resolution/cache (including romanization), portable LRC and JSON lyrics, embedded lyrics, playlist/album M3U8 manifests, reinstall restoration into native Downloads and lyrics caches, shared track files and offline storage migration while preserving MySpoti's native playback and AutoMix planner.",
     default = true,
 ) {
-    compatibleWith(MYSPOTI_STABLE)
+    compatibleWith(MYSPOTI_STABLE, MYSPOTI_REVERA)
     dependsOn(downloadToolsActivityManifestPatch)
     extendWith("extensions/extension.mpe")
     execute { applyMyspotiStorageHooks() }
