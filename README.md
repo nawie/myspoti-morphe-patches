@@ -49,6 +49,7 @@ Supported package variants:
 
 - `app.myspoti`
 - `app.myspoti.stable`
+- `app.revera.dev`
 
 ## MySpoti Export & Storage
 
